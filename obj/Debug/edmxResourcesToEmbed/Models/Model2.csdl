@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sd51Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="employeeID" />
+    </Key>
+    <Property Name="employeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeSalary" Type="Int32" />
+    <Property Name="employeeName" Type="String" Nullable="false" />
+    <Property Name="employeeDetails" Type="String" Nullable="false" />
+    <Property Name="employeeRole" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="orderID" />
+    </Key>
+    <Property Name="orderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="itemID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="sd51Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="employees" EntityType="Self.employee" />
+    <EntitySet Name="orders" EntityType="Self.order" />
+  </EntityContainer>
+  <ComplexType Name="ComplexType1">
+    <Property Type="String" Name="employeeName" MaxLength="1" FixedLength="false" Unicode="false" />
+  </ComplexType>
+</Schema>
